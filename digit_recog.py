@@ -1,10 +1,6 @@
-import pandas
-#from sklearn.linear_model import LinearRegression
-#from sklearn.linear_model.logistic import 
+import pandas 
 from sklearn.ensemble import RandomForestClassifier
-#from sklearn.ensemble import GradientBoostingClassifier
-from sklearn import cross_validation
-from sklearn.cross_validation import KFold
+
 
 digit =  pandas.read_csv("train.csv")
 digit_test = pandas.read_csv("test.csv").values
@@ -19,8 +15,6 @@ alg.fit(pixel,label)
 score = alg.score(pixel,label)
 print score
 
-#alg.fit(digit[predictors],digit["label"])
-#
 predictions = alg.predict(digit_test)
 
 submit = pandas.DataFrame({"ImageId":range(1,len(digit_test)+1), "Label": predictions})
